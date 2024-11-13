@@ -36,7 +36,7 @@ static std::string hexStr(unsigned char *data, int len)
 }
 
 void IrkEnrollmentComponent::setup() {
-  auto service_uuid = esphome::esp32_ble::ESPBTUUID::from_uint16(0x1812);
+  auto service_uuid = esphome::esp32_ble::ESPBTUUID::from_uint16(0x180D);
   esp32_ble_server::global_ble_server->create_service(service_uuid, true);
   this->service_ = esp32_ble_server::global_ble_server->get_service(service_uuid);
   esp32_ble::global_ble->advertising_add_service_uuid(service_uuid);
